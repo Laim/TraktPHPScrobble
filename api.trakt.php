@@ -27,7 +27,7 @@ function trakt($u, $t, $k) {
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Content-Type: application/json",
     "trakt-api-version: 2",
-    "trakt-api-key: f23c12dc047adde86f75af9dbe6e0aed99a09ebf8928bfcd7f37e4df88f1a010"
+    "trakt-api-key: $k"
   ));
 
   $response = curl_exec($ch);
