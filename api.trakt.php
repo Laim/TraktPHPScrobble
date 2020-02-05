@@ -20,14 +20,14 @@ function trakt($u, $t, $k) {
 
   $ch = curl_init();
 
-  curl_setopt($ch, CURLOPT_URL, "https://api.trakt.tv/users/$user/$type");
+  curl_setopt($ch, CURLOPT_URL, "https://api.trakt.tv/users/$u/$t");
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Content-Type: application/json",
     "trakt-api-version: 2",
-    "trakt-api-key: $k"
+    "trakt-api-key: f23c12dc047adde86f75af9dbe6e0aed99a09ebf8928bfcd7f37e4df88f1a010"
   ));
 
   $response = curl_exec($ch);
@@ -53,10 +53,14 @@ function scrobbleStatus($k, $u) {
   }
 }
 
-if(scrobbleStatus($k, $u)) {
-  $trakt = trakt($u, "watching", $k);
-} else {
-  $trakt = trakt($u, "history", $k);
-};
+function traktResponse($k, $u) {
+  if(scrobbleStatus($k, $u)) {
+    return trakt($u, "watching", $k);
+  } else {
+    return trakt($u, "history", $k);
+  };
+}
+
+var_dump(traktResponse($k, $u));
 
 ?>
