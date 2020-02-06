@@ -14,17 +14,24 @@ There are two type's of data that will be returned from this script.  If a user 
 
 ## Scrobbling Data
 ```
-Array
 (
-    [started_at] => 2020-02-06T14:46:26.000Z
-    [finishes_at] => 2020-02-06T15:30:26.000Z
+    [started_at] => 2020-02-06T15:37:53.000Z
+    [finishes_at] => 2020-02-06T16:21:53.000Z
+    [custom_status] => currently_watching
     [type] => episode
+    [show] => Array
+        (
+            [show_name] => Vikings
+            [show_year] => 2013
+            [trakt-id] => 43973
+        )
+
     [episode] => Array
         (
-            [season] => 1
-            [episode_number] => 3
-            [title] => The End is the Beginning
-            [trakt-id] => 3913104
+            [episode_season] => 6
+            [episode_number] => 10
+            [episode_title] => The Best Laid Plans
+            [trakt-id] => 3953303
         )
 
 )
